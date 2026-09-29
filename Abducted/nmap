@@ -1,0 +1,38 @@
+# Nmap 7.99 scan initiated Tue Sep 29 00:04:07 2026 as: /usr/lib/nmap/nmap -sVC -p- -oN nmap -v --min-rate 5000 10.129.244.177
+Increasing send delay for 10.129.244.177 from 80 to 160 due to 571 out of 1901 dropped probes since last increase.
+Increasing send delay for 10.129.244.177 from 160 to 320 due to 217 out of 721 dropped probes since last increase.
+Increasing send delay for 10.129.244.177 from 320 to 640 due to 422 out of 1406 dropped probes since last increase.
+Increasing send delay for 10.129.244.177 from 640 to 1000 due to 466 out of 1553 dropped probes since last increase.
+Warning: 10.129.244.177 giving up on port because retransmission cap hit (10).
+Nmap scan report for 10.129.244.177 (10.129.244.177)
+Host is up (0.10s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 9.6p1 Ubuntu 3ubuntu13.16 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 0c:4b:d2:76:ab:10:06:92:05:dc:f7:55:94:7f:18:df (ECDSA)
+|_  256 2d:6d:4a:4c:ee:2e:11:b6:c8:90:e6:83:e9:df:38:b0 (ED25519)
+139/tcp open  netbios-ssn Samba smbd 4
+445/tcp open  netbios-ssn Samba smbd 4
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-09-28T22:04:40
+|_  start_date: N/A
+| nbstat: NetBIOS name: ABDUCTED, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| Names:
+|   ABDUCTED<00>         Flags: <unique><active>
+|   ABDUCTED<03>         Flags: <unique><active>
+|   ABDUCTED<20>         Flags: <unique><active>
+|   \x01\x02__MSBROWSE__\x02<01>  Flags: <group><active>
+|   WORKGROUP<00>        Flags: <group><active>
+|   WORKGROUP<1d>        Flags: <unique><active>
+|_  WORKGROUP<1e>        Flags: <group><active>
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Sep 29 00:04:43 2026 -- 1 IP address (1 host up) scanned in 35.82 seconds
