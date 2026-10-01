@@ -1,0 +1,10 @@
+#Buscamos los krayin files y la buscamos en /var/www y buscamos el .env
+#encontramos juna contraseña para la bd, comprobamos a conectar por ssh en jones y funciona
+
+#Root
+#Probamos suerte 
+sudo -l 
+#Comprobamos los timers de systemd
+systemctl list-timers
+#Vemos que hace el servicio:
+systemctl cat gitea-template-sync.service

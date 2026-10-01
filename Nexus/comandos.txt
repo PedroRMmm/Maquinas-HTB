@@ -1,0 +1,17 @@
+ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u http://10.129.105.220 -H "Host: FUZZ.nexus.htb" -ac -o vhost.csv -of csv
+tail -n +2 vhost.csv | cut -d, -f1 > subdominios.txt
+
+
+# Dominio principal
+ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt \
+     -u http://10.129.105.220/FUZZ \
+     -H "Host: nexus.htb" -ac -o dirs_nexus.json -of json
+
+# Cada vhost
+while read sub; do
+  echo "[*] Fuzzing $sub.nexus.htb"
+  ffuf -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt \
+       -u http://10.129.105.220/FUZZ \
+       -H "Host: $sub.nexus.htb" -ac \
+       -o "dirs_$sub.json" -of json
+done < subdominios.txt

@@ -1,0 +1,1 @@
+tail -n +2 vhosts.csv | cut -d, -f1 > subdominios.txt
